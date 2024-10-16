@@ -4,7 +4,7 @@ export default function Cell({x,y, onCellClick, onInit}){
     const cellRef = useRef(null);
 
     useEffect(()=>{
-        onInit(x,y, cellRef)
+        onInit(x,y)
     },[])
 
     return (

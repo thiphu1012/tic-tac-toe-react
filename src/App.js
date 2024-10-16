@@ -18,17 +18,10 @@ function App() {
     console.log("board ", board);
   },[board])
 
-  const onCellCreated = (x,y, ref) => {
+  const onCellCreated = (x,y) => {
         setBoard(state => {
           const newState = [...state]
           newState.push({ x,y, player: -1 })
-          return newState;
-        })
-
-        setCellRefs(state => {
-          const newState = [...state];
-          newState.push(ref);
-
           return newState;
         })
   }
@@ -49,6 +42,13 @@ function App() {
         }
        })
        return newState;
+    })
+
+    setCellRefs(state => {
+      const newState = [...state];
+      newState.push(cellRef);
+
+      return newState;
     })
 
     // render player mark
